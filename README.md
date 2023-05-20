@@ -1,15 +1,16 @@
 # nothing app
 
 ## Run and Remove
-To start application you need docker host
-Start command:
-<sub> $ docker-compose up -d --build </sub> 
+To start application you need docker host. <br>
 
-Running up will be available on docker host machine with URL:
+Start command: <br>
+<code> $ docker-compose up -d --build </code> 
+
+Running up will be available on docker host machine with URL: <br>
 *http://127.0.0.1:5001*
 
-Stop application:
-<sub> $ docker-compose down --rmi all </sub> 
+Stop application: <br>
+<code> $ docker-compose down --rmi all </code> 
 
-Remove persistent volume:
-<sub> $ docker volume rm nothing_pgdata </sub> 
+Remove persistent volume: <br>
+<code> $ docker volume rm nothing_pgdata </code> 
