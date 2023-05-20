@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+
+  web-cont:
+    build: ./web_app
+    command: app.py
+    ports:
+      - 5001:5000
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      SECRET_KEY: gBI5ose5Z9CAW3HwcgKN
+      FLASK_RUN_PORT: 5000
+      DATABASE_URL: postgresql://barack_obama:qwe123QWE@db-cont:5432/the_base
+      APP_FOLDER: /usr/src/app
+      SQL_HOST: dbcont
+      SQL_PORT: 5432
+      DATABASE: the_base
+
+  db-cont:
+    build: ./db_app
+    environment:
+      POSTGRES_DB: the_base
+      POSTGRES_USER: barack_obama
+      POSTGRES_PASSWORD: qwe123QWE
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
