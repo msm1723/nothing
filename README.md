@@ -13,4 +13,4 @@ Stop application: <br>
 <code> $ docker-compose down --rmi all </code> 
 
 Remove persistent volume: <br>
-<code> $ docker volume rm nothing_pgdata </code> 
+<code> $ docker volume rm nothing_pgdata </codew> 

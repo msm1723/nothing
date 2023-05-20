@@ -11,7 +11,7 @@ WORKDIR /usr/src/nothing-app
 RUN pip install -r requirements.txt
 
 # configure the container to run commands using python iterpriter
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "sh" ]
 
 # run app: python app.py - doing this in compose file
 # CMD [ "app.py" ]

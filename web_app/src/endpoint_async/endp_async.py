@@ -22,7 +22,9 @@ async def get_all_from_table(table):
 @bp_async.route('/async')
 def get_data():
     async def get_async():
+        # create tasks for each table coroutine
         tasks = [asyncio.create_task(get_all_from_table(table)) for table in ('data_1', 'data_2', 'data_3')]
+        # wait each coroutine finishes
         for task in tasks:
             await task
     asyncio.run(get_async())

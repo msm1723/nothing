@@ -1,25 +1,30 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from time import sleep
 
-# Database setup
+# setup orm object
 db = SQLAlchemy()
 
 def create_app():
     """Create Flask application."""
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('src.config.Config')  # configure app using the Config class defined in src/config.py
-
-    db.init_app(app) # initialise the database for the app
+    
+    # init orm model
+    db.init_app(app)
 
     with app.app_context():
-        # from src import commands
-        # commands.init_app(app) # initialise the app cli
+        from src import commands
+        # initialise the app cli
+        commands.init_app(app)
 
-        # from src.models.data_1 import Data_1
-        # from src.models.data_2 import Data_2
-        # from src.models.data_3 import Data_3
-        # db.create_all()
+        # init database
+        from src.models.data_1 import Data_1
+        from src.models.data_2 import Data_2
+        from src.models.data_3 import Data_3
+        db.create_all()
 
+        # add blueprints (endpoint modules)
         from src.endpoint_main.main import main_bp
         app.register_blueprint(main_bp)
 

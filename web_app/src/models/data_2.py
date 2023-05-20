@@ -1,5 +1,6 @@
 from src import db
 
+# ORM model for table
 class Data_2(db.Model):
     __tablename__ = "data_2"
     id = db.Column(db.Integer, primary_key=True)
