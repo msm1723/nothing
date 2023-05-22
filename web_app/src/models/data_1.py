@@ -6,7 +6,8 @@ class Data_1(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
 
-    def __init__(self, name: str):
+    def __init__(self, id: int, name: str):
+        self.id = id
         self.name = name
 
     @staticmethod

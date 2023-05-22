@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from time import sleep
 
 # setup orm object
 db = SQLAlchemy()

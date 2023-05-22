@@ -13,4 +13,8 @@ Stop application: <br>
 <code> $ docker-compose down --rmi all </code> 
 
 Remove persistent volume: <br>
-<code> $ docker volume rm nothing_pgdata </codew> 
+<code> $ docker volume rm nothing_pgdata </code> 
+
+## Run and Remove
+To run tests in project root directory run: <br>
+<code> $ pytest -v </code>
