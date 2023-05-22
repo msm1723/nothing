@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 from .api_wrappers.main import TestApplicationApi
 
 
-@pytest.fixture
+@pytest.fixture(scope='session', autouse=True)
 def apply_test_data():
     engine = create_engine('postgresql://barack_obama:qwe123QWE@127.0.0.1:5432/the_base')
     Session = sessionmaker(bind=engine)
