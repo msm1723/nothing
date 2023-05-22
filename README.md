@@ -16,6 +16,6 @@ Remove persistent volume: <br>
 <code> $ docker volume rm nothing_pgdata </code> 
 
 ## Run tests
-NB: for ranning tests **requests** and **pytest** must be installed on docker host.
+NB: for ranning tests **requests** and **pytest** must be installed on docker host. <br>
 To run tests in project root directory run: <br>
 <code> $ pytest -v </code>
