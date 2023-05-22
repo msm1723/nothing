@@ -15,6 +15,6 @@ Stop application: <br>
 Remove persistent volume: <br>
 <code> $ docker volume rm nothing_pgdata </code> 
 
-## Run and Remove
+## Run tests
 To run tests in project root directory run: <br>
 <code> $ pytest -v </code>
