@@ -1,5 +1,3 @@
-import pytest
-import json
 from .data.data_dicts import data1_dict, data2_dict, data3_dict
 
 
